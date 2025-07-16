@@ -36,7 +36,7 @@ def finalni(vysledek):
     result = float(vysledek[0])
     znamenka = "+-"
     i = 1
-    while i < len(vysledek) - 2:
+    while i < len(vysledek) - 1:
         prvek = vysledek[i]
         if prvek in znamenka:
             if prvek == "+":
