@@ -1,14 +1,9 @@
 text = input()
 def prevedeni(text):
-    while "(" in text:
-        pozice_prvni_zavorky = text.rfind("(")
-        pozice_druhe_zavorky = text.find(")", pozice_prvni_zavorky)
-        vysledek_zavorky = str(finalni(trideni(prevedeni(text[pozice_prvni_zavorky + 1:pozice_druhe_zavorky]))))
-        text = text[:pozice_prvni_zavorky] + vysledek_zavorky + text[pozice_druhe_zavorky + 1:]
     vysledek = []
     cislo = ""
     for char in text:
-        if char.isnumeric():
+        if char.isnumeric() or char == ".":
             cislo += char
         else:
             if cislo:
@@ -51,6 +46,11 @@ def finalni(vysledek):
         i += 2
     return result
 
+while "(" in text:
+    pozice_prvni_zavorky = text.rfind("(")
+    pozice_druhe_zavorky = text.find(")", pozice_prvni_zavorky)
+    vysledek_zavorky = str(finalni(trideni(prevedeni(text[pozice_prvni_zavorky + 1:pozice_druhe_zavorky]))))
+    text = text[:pozice_prvni_zavorky] + vysledek_zavorky + text[pozice_druhe_zavorky + 1:]
 try:
     print(finalni(trideni(prevedeni(text))))
 except ValueError:
