@@ -17,7 +17,7 @@ def prevedeni(text):
 def trideni(vysledek):
     prednost = "*/"
     i = 1
-    while i < len(vysledek) - 1:
+    while i < len(vysledek) - 2:
         prvek = vysledek[i]
         a = float(vysledek[i+1])
         b = float(vysledek[i-1])
