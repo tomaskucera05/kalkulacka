@@ -17,11 +17,11 @@ def prevedeni(text):
 def trideni(vysledek):
     prednost = "*/"
     i = 1
-    while i < len(vysledek) - 2:
+    while i < len(vysledek) - 1:
         prvek = vysledek[i]
-        a = float(vysledek[i+1])
-        b = float(vysledek[i-1])
         if prvek in prednost:
+            a = float(vysledek[i+1])
+            b = float(vysledek[i-1])
             if prvek == "*":
                 vysledek[i-1:i+2] = [str(a*b)]
             else:
@@ -36,7 +36,7 @@ def finalni(vysledek):
     result = float(vysledek[0])
     znamenka = "+-"
     i = 1
-    while i < len(vysledek):
+    while i < len(vysledek) - 2:
         prvek = vysledek[i]
         if prvek in znamenka:
             if prvek == "+":
